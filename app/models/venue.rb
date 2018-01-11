@@ -1,6 +1,9 @@
 class Venue < ApplicationRecord
   # Direct associations
 
+  belongs_to :neighborhoods,
+             :class_name => "Neighborhood"
+
   has_many   :favorites,
              :foreign_key => "venues_id",
              :dependent => :destroy
