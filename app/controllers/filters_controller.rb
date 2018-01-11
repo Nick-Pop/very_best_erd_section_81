@@ -1,6 +1,7 @@
 class FiltersController < ApplicationController
   def index
-    @filters = Filter.page(params[:page]).per(10)
+    @q = Filter.ransack(params[:q])
+    @filters = @q.result(:distinct => true).includes(:dish, :cuisine).page(params[:page]).per(10)
 
     render("filters/index.html.erb")
   end
