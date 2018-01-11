@@ -1,6 +1,6 @@
 class FiltersController < ApplicationController
   def index
-    @filters = Filter.all
+    @filters = Filter.page(params[:page]).per(10)
 
     render("filters/index.html.erb")
   end
