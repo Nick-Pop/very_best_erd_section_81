@@ -23,7 +23,13 @@
         <td><%= venue.neighborhood %></td>
         <td><%= venue.venue_details %></td>
         <td><%= venue.address %></td>
-        <td><%= venue.neighborhoods.neighborhood_name %></td>
+        <td>
+          <% if venue.neighborhoods.present? %>
+            <a href="/neighborhoods/<%= venue.neighborhoods.id %>">
+              <%= venue.neighborhoods.neighborhood_name %>
+            </a>
+          <% end %>
+        </td>
         <td>
           <a href="/venues/<%= venue.id %>" class="btn btn-primary">Show</a>
           <a href="/venues/<%= venue.id %>/edit" class="btn btn-warning">Edit</a>
