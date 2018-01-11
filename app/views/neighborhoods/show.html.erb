@@ -51,6 +51,62 @@
           </div>
         </li>
       <% end %>
+
+      <li class="list-group-item">
+        <form action="/create_venue" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for restaurant_name -->
+      <div class="form-group">
+        <label for="restaurant_name" class="control-label">
+          Restaurant name
+        </label>
+
+        <input type="text" id="restaurant_name" name="restaurant_name" placeholder="Restaurant name" class="form-control" value="">
+      </div>
+
+      <!-- Label and input for neighborhood -->
+      <div class="form-group">
+        <label for="neighborhood" class="control-label">
+          Neighborhood
+        </label>
+
+        <input type="text" id="neighborhood" name="neighborhood" placeholder="Neighborhood" class="form-control" value="">
+      </div>
+
+      <!-- Label and input for venue_details -->
+      <div class="form-group">
+        <label for="venue_details" class="control-label">
+          Venue details
+        </label>
+
+        <input type="text" id="venue_details" name="venue_details" placeholder="Venue details" class="form-control" value="">
+      </div>
+
+      <!-- Label and input for address -->
+      <div class="form-group">
+        <label for="address" class="control-label">
+          Address
+        </label>
+
+        <input type="text" id="address" name="address" placeholder="Address" class="form-control" value="">
+      </div>
+
+      <!-- Label and input for neighborhoods_id -->
+      <div class="form-group">
+        <label for="neighborhoods_id" class="control-label">
+          Neighborhoods
+        </label>
+
+        <%= select_tag(:neighborhoods_id, options_from_collection_for_select(Neighborhood.all, :id, :neighborhood_name), :class => "form-control") %>
+      </div>
+
+      <button class="btn btn-block btn-success">
+        Create Venue
+      </button>
+    </form>
+      </li>
     </ul>
   </div>
 </div>
