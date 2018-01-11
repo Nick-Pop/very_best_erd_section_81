@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the Filter resource:
+  # CREATE
+  get "/filters/new", :controller => "filters", :action => "new"
+  post "/create_filter", :controller => "filters", :action => "create"
+
+  # READ
+  get "/filters", :controller => "filters", :action => "index"
+  get "/filters/:id", :controller => "filters", :action => "show"
+
+  # UPDATE
+  get "/filters/:id/edit", :controller => "filters", :action => "edit"
+  post "/update_filter/:id", :controller => "filters", :action => "update"
+
+  # DELETE
+  get "/delete_filter/:id", :controller => "filters", :action => "destroy"
+  #------------------------------
+
   # Routes for the Cuisine resource:
   # CREATE
   get "/cuisines/new", :controller => "cuisines", :action => "new"
