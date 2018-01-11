@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root :to => "dishes#index"
   # Routes for the Filter resource:
   # CREATE
   get "/filters/new", :controller => "filters", :action => "new"
