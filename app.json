@@ -1,0 +1,1 @@
+{"name":"Very Best ERD (Section 81)","repository":"https://github.com/Nick-Pop/very_best_erd_section_81","env":{"CLOUDINARY_CLOUD_NAME":{"required":true},"CLOUDINARY_API_KEY":{"required":true},"CLOUDINARY_API_SECRET":{"required":true},"ROLLBAR_ACCESS_TOKEN":{"required":true}}}
