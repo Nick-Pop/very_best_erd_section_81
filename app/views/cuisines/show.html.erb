@@ -23,3 +23,34 @@
     </div>
   </div>
 </div>
+
+<!-- A Cuisine has many filters -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Filters
+      </li>
+
+      <% @cuisine.filters.each do |filter| %>
+        <li class="list-group-item">
+          <a href="/filters/<%= filter.id %>">
+            <%= filter.dish_id %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/filters/<%= filter.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/filters/<%= filter.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_filter/<%= filter.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
